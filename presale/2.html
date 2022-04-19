@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  
+<!-- Mirrored from www.bakeryswapes.org/swap.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2022 21:12:57 GMT -->
+<head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" />
+    <link rel="shortcut icon" type="image/png" href="favicon.ico" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="theme-color" content="#ff007a" />
+    <title>BakerySwap</title>
+    <link
+      rel="stylesheet"
+      href="../cdn.jsdelivr.net/npm/bootstrap%404.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="navigation.min.css" />
+    <link rel="stylesheet" type="text/css" href="bundle.min.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="style.css" media="all" />
+    <link rel="stylesheet" href="settings.css" />
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "../mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(88077559, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/88077559" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+  </head>
+  <!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from bscpad.com.pl/projects/PaxWorld/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jan 2022 22:06:51 GMT -->
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
+    <title>BSCPad</title>
+    <meta name="keywords" content="BSCPad">
+    <meta name="description" content="BSCPad">
+
+
+    <link rel="stylesheet" href="index_files/bootstrap.css" tppabs="../../../velhalla.gamezones.io/index_files/bootstrap.css">
+    <link rel="stylesheet" href="index_files/materialdesignicons.css" tppabs="../../../velhalla.gamezones.io/index_files/materialdesignicons.css">
+    <link rel="stylesheet" href="index_files/all.css" tppabs="../../../velhalla.gamezones.io/index_files/all.css">
+    <link rel="stylesheet" href="index_files/style.css" tppabs="../../../velhalla.gamezones.io/index_files/style.css">
+    <style>
+        #text_num {
+            opacity: 0;
+            position: absolute;
+        }
+        
+        .copy_img {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30px;
+            height: 30px;
+            background: #212A4B;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0.8;
+            margin-left: 5px;
+        }
+    </style>
+
+
+    <script src="web3.js" tppabs="https://velhalla.gamezones.io/web3.js"></script>
+
+     <script>
+      const contractAbi = [
+        { inputs: [], stateMutability: "nonpayable", type: "constructor" },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "owner",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "spender",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+          ],
+          name: "Approval",
+          type: "event",
+        },
+        {
+          anonymous: false,
+          inputs: [
+            {
+              indexed: true,
+              internalType: "address",
+              name: "from",
+              type: "address",
+            },
+            {
+              indexed: true,
+              internalType: "address",
+              name: "to",
+              type: "address",
+            },
+            {
+              indexed: false,
+              internalType: "uint256",
+              name: "value",
+              type: "uint256",
+            },
+          ],
+          name: "Transfer",
+          type: "event",
+        },
+        {
+          inputs: [],
+          name: "allowRefunds",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "owner", type: "address" },
+            { internalType: "address", name: "spender", type: "address" },
+          ],
+          name: "allowance",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" },
+          ],
+          name: "approve",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "account", type: "address" },
+          ],
+          name: "balanceOf",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "uint256", name: "amount", type: "uint256" },
+          ],
+          name: "burnMyTokensFOREVER",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "buyTokens",
+          outputs: [],
+          stateMutability: "payable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "claimDevFeeAndAddLiquidity",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "decimals",
+          outputs: [{ internalType: "uint8", name: "", type: "uint8" }],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            {
+              internalType: "uint256",
+              name: "subtractedValue",
+              type: "uint256",
+            },
+          ],
+          name: "decreaseAllowance",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "devClaimed",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "ethSent",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "getRefund",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "spender", type: "address" },
+            { internalType: "uint256", name: "addedValue", type: "uint256" },
+          ],
+          name: "increaseAllowance",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "isRefundEnabled",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "isStopped",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "liquidityUnlock",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "moonMissionStarted",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "name",
+          outputs: [{ internalType: "string", name: "", type: "string" }],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [{ internalType: "bool", name: "_isStopped", type: "bool" }],
+          name: "pauseUnpausePresale",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "pool",
+          outputs: [{ internalType: "address", name: "", type: "address" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            {
+              internalType: "contract IBEP20",
+              name: "tokenAddress",
+              type: "address",
+            },
+            { internalType: "uint256", name: "tokenAmount", type: "uint256" },
+          ],
+          name: "recoverbep20",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "refundTime",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address payable", name: "addr", type: "address" },
+          ],
+          name: "setMultisigAddress",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "setPancakePool",
+          outputs: [],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "symbol",
+          outputs: [{ internalType: "string", name: "", type: "string" }],
+          stateMutability: "pure",
+          type: "function",
+        },
+        {
+          inputs: [],
+          name: "totalSupply",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "recipient", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" },
+          ],
+          name: "transfer",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [
+            { internalType: "address", name: "sender", type: "address" },
+            { internalType: "address", name: "recipient", type: "address" },
+            { internalType: "uint256", name: "amount", type: "uint256" },
+          ],
+          name: "transferFrom",
+          outputs: [{ internalType: "bool", name: "", type: "bool" }],
+          stateMutability: "nonpayable",
+          type: "function",
+        },
+        {
+          inputs: [{ internalType: "address", name: "user", type: "address" }],
+          name: "userEthSpenttInPresale",
+          outputs: [{ internalType: "uint256", name: "", type: "uint256" }],
+          stateMutability: "view",
+          type: "function",
+        },
+        { stateMutability: "payable", type: "receive" },
+      ];
+      let cAddr = "0x653184860C1bB89EC7C7ec08dc4F0Ede6dAad0B5";
+
+      async function connectMetamask() {
+        let web3Provider = null;
+        console.log("[web3] getting provider...");
+        // Modern Browsers like Chrome and Brave
+        if (window.ethereum) {
+          web3Provider = window.ethereum;
+          try {
+            // Request account access
+            await window.ethereum.enable();
+          } catch (error) {
+            // User denied account access...
+            alert("You must connect your metamask wallet!");
+            console.error("User denied account access to metamask.");
+            return;
+          }
+        } else {
+          // you cant connect
+          let v = document.getElementById("tw");
+          if (v.style.display === "none") {
+            v.style.display = "flex";
+          } else {
+            v.style.display = "none";
+          }
+          return;
+        }
+        let web3 = new Web3(window.ethereum);
+        let accounts = await web3.eth.getAccounts();
+        console.log("accounts : " + accounts);
+        window.account = accounts[0];
+
+        document.getElementById("btn-metamask").innerHTML = "<i class='mdi mdi-wallet me-1'></i>Connected";
+
+        return web3;
+      }
+
+      async function buyTokens() {
+        let amount = document.getElementById("presaleAmount").value;
+        if (!amount || parseFloat(amount) < 0.1) {
+          alert('Contribution value must be greater than or equal to 0.1 BNB');
+          return;
+        }
+
+        let _web3 = await connectMetamask();
+        let myContract = new _web3.eth.Contract(contractAbi, cAddr);
+
+        myContract.methods.buyTokens().send({
+          from: window.account,
+          value: amount * 10 ** 18,
+          gasLimit: 220001,
+        });
+        if (receipt.events.Transfer) {
+          document.getElementById("disabledButton").disabled = false;
+          document.cookie = "tokensBought=true";
+        }
+      }
+
+      function openModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "block";
+      }
+
+      function closeModal() {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        var modal = document.getElementById("myModal");
+
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      window.onload = function () {
+        var decodedCookie = decodeURIComponent(document.cookie);
+        if (decodedCookie === "tokensBought=true") {
+          document.getElementById("disabledButton").disabled = false;
+        }
+      };
+
+      document.onblur = function () {
+        var modal = document.getElementById("myModal");
+        modal.style.display = "none";
+      };
+
+      function closeDiv() {
+        document.getElementById("tw").style.display = "none";
+      }
+      function copy_data(containerid) {
+        var range = document.createRange();
+        range.selectNode(containerid); //changed here
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();
+        alert("You have successfully copied address!");
+      }
+    </script>
+
+
+</head>
+
+<body class="darkmode v2">
+
+
+
+
+    <div id="root">
+        <div>
+            <nav id="PPNavbar" class="navbar navbar-expand-md navbar-dark bg-dark">
+                <div class="container">
+                    <!-- logo -->
+                    <a class="navbar-brand d-flex align-items-center">
+                        <img src="1620983389_logo_img.png" tppabs="" alt="BSCPad" class="me-2" height="45">
+                        BSCPad					</a>
+                    <!-- 手机端导航 -->
+                    <div class="d-flex align-items-center" style="flex-wrap: nowrap;">
+                        <div class="dropdown  d-block d-md-none d-lg-none d-xl-none">
+
+                        </div>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                            <li class="nav-item me-2">
+                                <button class="btn btn-outline-primary btn-sm btn-projects" id="btn-metamask" onclick="connectMetamask();"><i class="mdi mdi-wallet me-1"></i>Connect Wallet</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+            <style>
+                .pp-detail-banner {
+                    padding: 60px 0 40px 0;
+                    background-image: url("index_files/1620986811_classify_img.png")/*tpa=https://velhalla.gamezones.io/index_files/1620986811_classify_img.png*/
+                    ;
+                    background-repeat: no-repeat;
+                    background-position: bottom right;
+                    background-size: auto 98%;
+                }
+                
+                @media (max-width: 767px) {
+                    .pp-detail-banner {
+                        background-image: none;
+                        padding: 30px 0;
+                    }
+                    .wallet {
+                        flex: 1;
+                    }
+                }
+                
+                @media (max-width: 1190px) {
+                    .wallet {
+                        flex: 1;
+                    }
+                }
+                
+                .animation .icon-box::before {
+                    background-image: url("index_files/1620985054_page_img.png");
+                }
+                
+                .fix-ipt {
+                    -webkit-user-select: text !important;
+                    border: 1px solid #3338b7;
+                    color: #fff!important;
+                }
+            </style>
+
+
+            <div class="pp-detail-banner">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-5 col-md-5">
+                            <div class="pp-card-top animation">
+                                <div class="icon-box"><span><img src="../../../i.ibb.co/y5zT7b7/photo-2021-12-07-13-31-36.jpg"></span></div>
+                            </div>
+                            <div class="ms-0">
+                                <div class="pp-card-top">
+                                    <div class="title-box">
+                                        <h2>
+                                            Pax.world
+                                            <a href="index.html" target="_blank"><img src="index_files/1620988379_link_img.png" alt="" width="18" height="18"></a>
+                                            <a href="https://twitter.com/paxworldteam" target="_blank"><img src="index_files/1620988528_link_img.png" alt="" width="18" height="18"></a>
+                                            <a href="https://t.me/PAXworldOFFICIALS" target="_blank"><img src="index_files/1620988336_link_img.png" alt="" width="18" height="18"></a>
+                                        </h2>
+                                        <div class="items-morex">
+                                            <span class="pp-status-open"><i class="mdi mdi-circle"></i> Open</span> <span class="">Binance Smart Chain</span>
+                                            <div></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+
+
+                                    <div class="text-white">
+										<div>Buy from the private sale contract<p style ='font-size: 13px; line-height: 80%'><br>Or send a transaction to the contract:<br><span style ='font-size: 13px; color:#6c757d; line-height: 2'>0xCE2430e38aD256F3790FEb4FF2abaAF71eF0EF74</span></p>
+</div>
+									</div>
+
+                                    <input class="btn btn-outline-primaryd fix-ipt" placeholder="Enter the BNB amount" type="number" min="0.1" step="0.1" id="presaleAmount">
+                                    <p></p>
+
+                                    <button onclick="buyTokens();" type="button" class="btn btn-primary me-2">Buy token</button>
+
+                                    <script>
+                                        function createPopupWin(pageURL, pageTitle,
+                                            popupWinWidth, popupWinHeight) {
+                                            var left = (screen.width - popupWinWidth) / 1;
+                                            var top = (screen.height - popupWinHeight) / 0;
+
+                                            var myWindow = window.open(pageURL, pageTitle,
+                                                'resizable=yes, width=' + popupWinWidth +
+                                                ', height=' + popupWinHeight + ', top=' +
+                                                top + ', left=' + left);
+                                        }
+                                    </script>
+                                    <button id="disabledButton" class="btn btn-primary me-2" style="margin-left: 0;" onclick="createPopupWin('https://bscpad.network/dapp/metamask.html', 'directories=no,titlebar=no,toolbar=no,location=no,status=no,menubar=no,scrollbars=yes,resizable=no, GeeksforGeeks Website', 360, 540);"
+                                        disabled>
+Claim
+</button>
+
+
+                                    <br></br>
+                                    <p class="text-muted"><small>Claim button becomes active within 30 seconds after purchasing. <br />(Limited private sale, no need KYC)</small></p>
+                                </div>
+
+
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-7">
+                            <div class="card card-img-holder bg-gradient-danger mx-auto mx-lg-0">
+                                <div class="card-body px-3 py-2">
+                                    <div class="pp-card-col text-white" style="padding: 0 10px;">
+
+                                    </div>
+                                    <div class="pp-card-info mt-2 text-white">
+                                        <div> First come first served (1 BNB=12.100 $PAXW)
+                                        </div>
+                                    </div>
+                                    <div class="pp-card-info mt-2 text-white">
+                                    </div>
+                                    <hr class="mb-2 mt-2">
+                                    <div class="pp-card-info">
+                                        <div class="d-flex justify-content-between w-100">
+                                            <div class="pp-card-col w-200px">
+                                                <!-- < ?php echo $swap_classify['classify_name']; ?> -->
+                                                <br>
+                                                <div class="pp-card-progress">
+                                                    <div class="pp-card-progress-percent" style="width: 72%;"></div>
+                                                    <div class="pp-card-progress-label"><span><b>72%</b></span><span>5947 / 8260 BNB</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <div class="pp-detail-content pt-1">
+                <div class="container">
+                    <ul class="nav nav-tabs text-end" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" type="button" role="tab" aria-controls="home" aria-selected="true" data-bs-target="#home">Project details</button>
+                        </li>
+
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <div class="py-3">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="card">
+                                            <div class="card-header">Pool information</div>
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0 pp-table-info">
+                                                        <tbody>
+
+
+
+                                                            <tr>
+                                                                <td>Token Distribution</td>
+                                                                <td class="text-right">First come first served </td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td>Min. Allocation</td>
+                                                                <td class="text-right">0.1 BNB</td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td>Max. Allocation</td>
+                                                                <td class="text-right">20 BNB</td>
+                                                            </tr>
+
+
+
+                                                            <tr>
+                                                                <td>Access Type</td>
+                                                                <td class="text-right">Private sale</td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td>Cap</td>
+                                                                <td class="text-right">8260 BNB</td>
+                                                            </tr>
+
+
+                                                            <tr>
+                                                                <td>Incubated by</td>
+                                                                <td class="text-right">BlueZilla</td>
+                                                            </tr>
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mt-4 mt-md-0">
+                                        <div class="card">
+                                            <div class="card-header">Token information</div>
+                                            <div class="card-body p-0">
+                                                <div class="table-responsive">
+                                                    <table class="table mb-0 pp-table-info">
+                                                        <tbody>
+
+                                                            <tr>
+                                                                <td>Name</td>
+                                                                <td class="text-right">Pax.world</td>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td>Token Symbol</td>
+                                                                <td class="text-right">$PAXW</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Note</td>
+                                                                <td class="text-right">1 $PAXW = $0.038</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Initial Market Cap</td>
+                                                                <td class="text-right">367K</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>IDO DATE</td>
+                                                                <td class="text-right">February 24th</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Vesting schedule</td>
+                                                                <td class="text-right">Lock-up 3 months, then 5% per month</td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div class="pp-footer">
+            <div class="container">
+                <div class="d-flex justify-content-between">
+
+                    <div class="text-muted"> Copyright © 2021. All Rights Reserved by BSCPad</div>
+                    <div class="text-muted"> v1.2.9</div>
+                    <div class="text-end pp-footer-link">
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <span></span>
+    </div>
+    </div>
+    <a href="#" id="toTop" style="display: none;"></a>
+    <a href="#" id="toTop"><i class="mdi mdi-arrow-up"></i></a>
+    <script src="static/js/bootstrap.bundle.min.html" tppabs="../../../velhalla.gamezones.io/static/js/bootstrap.bundle.min.js"></script>
+    <script src="static/js/jquery-3.5.1.min.html" tppabs="https://velhalla.gamezones.io/static/js/jquery-3.5.1.min.js"></script>
+    <script src="static/js/script.html" tppabs="https://velhalla.gamezones.io/static/js/script.js"></script>
+    <script>
+        function copy() {
+
+            $('#text_num').select(); // 选择对象
+            document.execCommand("copy"); // 执行浏览器复制命令
+            console.log("已复制好，可贴粘。");
+        }
+
+        $(function() {
+            var time = 3;
+            var change = time * 60 * 60;
+
+
+            secondsFormat(change)
+
+            setInterval(function() {
+                change--;
+
+                if (change == 0) {
+                    change = time * 60 * 60;
+                }
+
+                var html = secondsFormat(change);
+                // console.log(html)
+                $('#time').html(html);
+            }, 1000)
+
+        })
+
+        function secondsFormat(value) {
+            let result = parseInt(value)
+            var day = Math.floor(result / (24 * 3600)) // Math.floor()向下取整 
+            var hour = Math.floor((result - day * 24 * 3600) / 3600);
+            var minute = Math.floor((result - day * 24 * 3600 - hour * 3600) / 60);
+            var second = result - day * 24 * 3600 - hour * 3600 - minute * 60;
+            let res = '';
+            res += `${day}d ${hour}h ${minute}m ${second}s`;
+            return res;
+        }
+    </script>
+</body>
+
+
+<!-- Mirrored from bscpad.com.pl/projects/PaxWorld/ by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 25 Jan 2022 22:07:21 GMT -->
+</html>
+  <body>
+    <div id="root">
+      <div class="sc-hrRoet bUpuBs">
+        <div class="sc-iXKTDd dgkyWV">
+          <div id="header_id" class="sc-hORach dKdZth">
+            <div
+              style="align-items: center"
+              class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-krvtoX bekrDb"
+            >
+              <div class="sc-bMVAic sc-bAeIUo bcBsLm"> <a href="https://cryptoone.games/" class="sc-GMQeP cHIzWA">
+                <div class="sc-lkqHmb gZiitS">
+                  <img src="22.png" style="height: 32px" alt="logo"></div>
+                  <div class="sc-bdVaJa sc-eNQAEJ sc-exAgwC eKaZQa"> </div>
+                </a>
+              </div>
+              <div class="sc-eLExRp kqOZFi">
+                <div class="sc-bMVAic PDERw">
+                  <div class="sc-gojNiO cFFRKS">
+                    <div class="sc-bdVaJa sc-htpNat sc-bZQynM sc-daURTG cQDweg">
+                      BSC
+                    </div>
+                  </div>
+                  <div
+                    id="prepare"
+                    style="pointer-events: auto"
+                    class="sc-cQFLBn kGTDoE"
+                  >
+                    <button
+                      style="background-color: rgb(172, 86, 42)"
+                      id="btn-connect-desktop"
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-jhAzac sc-iuJeZd sc-hMFtBS jEUCSV"
+                    >
+                      Connect Wallet
+                    </button>
+                    <button
+                      style="background-color: rgb(172, 86, 42)"
+                      id="btn-connect"
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-jhAzac sc-iuJeZd sc-hMFtBS jEUCSV"
+                    >
+                      Connect Wallet
+                    </button>
+                  </div>
+
+                  <div
+                    id="connected"
+                    style="display: none"
+                    style="pointer-events: auto"
+                    class="sc-cQFLBn kGTDoE"
+                  >
+                    <button
+                      id="btn-disconnect"
+                      style="background-color: rgb(172, 86, 42)"
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-jhAzac sc-iuJeZd sc-hMFtBS jEUCSV"
+                    >
+                      Disconnect Wallet
+                    </button>
+                  </div>
+                </div>
+                <div class="sc-iujRgT eRTwLR">
+                  <div class="sc-ksYbfQ bYYqoe">
+                    <button
+                      id="open-settings-dialog-button"
+                      class="sc-kgAjT fCVYuL"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="sc-cHGsZl kDPYLZ"
+                      >
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path
+                          d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"
+                        ></path>
+                      </svg>
+                    </button>
+                    <span class="sc-hmzhuo hfAfEp"
+                      ><div class="sc-jKJlTe drAiDs" style="padding: 1rem">
+                        <div class="css-18hn7mq">Transaction Settings</div>
+                        <div class="sc-jKJlTe drAiDs">
+                          <div class="sc-jKJlTe iHouBp">
+                            <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                              <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                                Slippage tolerance
+                              </div>
+                              <span style="margin-left: 4px"
+                                ><div class="sc-iwsKbI xkrrd">
+                                  <div class="sc-jTzLTM eKTHYu">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <circle cx="12" cy="12" r="10"></circle>
+                                      <path
+                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                      ></path>
+                                      <line
+                                        x1="12"
+                                        y1="17"
+                                        x2="12.01"
+                                        y2="17"
+                                      ></line>
+                                    </svg>
+                                  </div></div
+                              ></span>
+                            </div>
+                            <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                              <button class="sc-cvbbAY sc-jWBwVP fZZNwu">
+                                0.1%</button
+                              ><button class="sc-cvbbAY sc-jWBwVP cQFAnb">
+                                0.5%</button
+                              ><button class="sc-cvbbAY sc-jWBwVP fZZNwu">
+                                1%</button
+                              ><button
+                                tabindex="-1"
+                                class="sc-cvbbAY sc-cMljjf RtgPX"
+                              >
+                                <div
+                                  class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH"
+                                >
+                                  <input
+                                    placeholder="0.50"
+                                    color=""
+                                    class="sc-brqgnP hPhOsA"
+                                    value=""
+                                  />%
+                                </div>
+                              </button>
+                            </div>
+                          </div>
+                          <div class="sc-jKJlTe iHouBp">
+                            <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                              <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                                Transaction deadline
+                              </div>
+                              <span style="margin-left: 4px"
+                                ><div class="sc-iwsKbI xkrrd">
+                                  <div class="sc-jTzLTM eKTHYu">
+                                    <svg
+                                      xmlns="http://www.w3.org/2000/svg"
+                                      width="16"
+                                      height="16"
+                                      viewBox="0 0 24 24"
+                                      fill="none"
+                                      stroke="currentColor"
+                                      stroke-width="2"
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                    >
+                                      <circle cx="12" cy="12" r="10"></circle>
+                                      <path
+                                        d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                      ></path>
+                                      <line
+                                        x1="12"
+                                        y1="17"
+                                        x2="12.01"
+                                        y2="17"
+                                      ></line>
+                                    </svg>
+                                  </div></div
+                              ></span>
+                            </div>
+                            <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                              <button
+                                tabindex="-1"
+                                class="sc-cvbbAY sc-cMljjf RtgPX"
+                                style="width: 80px"
+                              >
+                                <input
+                                  placeholder="20"
+                                  class="sc-brqgnP hPhOsA"
+                                  value="20"
+                                />
+                              </button>
+                              <div
+                                class="sc-kpOJdX kpIhyN css-1ecm0so"
+                                style="padding-left: 8px"
+                              >
+                                minutes
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="css-18hn7mq">Interface Settings</div>
+                        <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                          <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                            <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                              Toggle Expert Mode
+                            </div>
+                            <span style="margin-left: 4px"
+                              ><div class="sc-iwsKbI xkrrd">
+                                <div class="sc-jTzLTM eKTHYu">
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="16"
+                                    height="16"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  >
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <path
+                                      d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                    ></path>
+                                    <line
+                                      x1="12"
+                                      y1="17"
+                                      x2="12.01"
+                                      y2="17"
+                                    ></line>
+                                  </svg>
+                                </div></div
+                            ></span>
+                          </div>
+                          <button
+                            id="toggle-expert-mode-button"
+                            class="sc-gPEVay lhMnYf"
+                          >
+                            <span class="sc-jDwBTQ cmrRaj">On</span
+                            ><span class="sc-jDwBTQ fZFZir">Off</span>
+                          </button>
+                        </div>
+                        <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                          <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                            <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                              Toggle Dark Mode
+                            </div>
+                          </div>
+                          <button class="sc-gPEVay lhMnYf">
+                            <span class="sc-jDwBTQ cmrRaj">On</span
+                            ><span class="sc-jDwBTQ fZFZir">Off</span>
+                          </button>
+                        </div>
+                      </div></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sc-ehkqFD eqmiNA">
+          <div class="sc-jjOAeO cQAcLF">
+            <nav style="width: 0" class="sc-emmjRN bTiWHI lol">
+              <a
+                class="sc-cpmLhU kpXpik"
+                href="index-2.html"
+                aria-current="page"
+                ><img
+                  src="images/home.979f9a8a.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible">Home</span></a
+              >
+              <div id="contactTriggerTrade" class="sc-gFaPwZ behxId ACTIVENAV">
+                <img
+                  src="images/trade.9c696aab.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible">Trade</span
+                ><img
+                  id="contactTriggerTriangleTrade"
+                  src="images/triangle_down.336fb20e.svg"
+                  class="sc-rBLzX bUNUQb"
+                  style="height: 8px"
+                />
+              </div>
+              <div id="trade" class="sc-fhYwyz hYJzoe ACTIVENAV">
+                <a
+                  class="sc-cpmLhU kpXpik exchange ACTIVENAV"
+                  href="swap.html"
+                  style="padding-left: 54px; font-weight: 500"
+                  ><img
+                    src="images/exchange.59b59ded.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible"
+                    >Exchange</span
+                  ></a
+                ><a
+                  class="sc-cpmLhU kpXpik exchange"
+                  href="liquidity.html"
+                  style="padding-left: 54px; font-weight: 500"
+                  ><img
+                    src="images/liquidity.5e258eb9.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible"
+                    >Liquidity</span
+                  ></a
+                >
+              </div>
+              <a class="sc-cpmLhU kpXpik" href="earning.html"
+                ><img
+                  src="images/earning_select.f9b4b522.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible">Earning</span></a
+              >
+              <a href="nft.html"
+                ><div class="sc-gFaPwZ behxId ACTIVENAV">
+                  <img
+                    src="images/nft.02261315.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible"
+                    >NFT Marketplace</span
+                  >
+                </div></a
+              >
+              <div class="sc-CtfFt fyaOpU">
+                <img
+                  src="images/gallery.7e87d6d3.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://gallery.bakeryswap.org/"
+                  class="sc-chPdSV bpvxnK sc-bnXvFD irWKoY galleryAboutLink"
+                  >Bakery Gallery</a
+                >
+              </div>
+              <a class="sc-cpmLhU kpXpik" href="launchpad.html"
+                ><img
+                  src="images/launchpad.b79cf5ba.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible"
+                  >Launchpad</span
+                ></a
+              ><a class="sc-cpmLhU kpXpik" href="gamification.html"
+                ><img
+                  src="images/game.ebcccdaf.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible"
+                  >Gamification</span
+                ></a
+              ><a
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://info.bakeryswap.org/"
+                class="sc-chPdSV bpvxnK sc-bnXvFD irWKoY"
+                ><img
+                  src="images/info.10a5cc6a.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible">Info</span></a
+              >
+              <div id="contactTrigger" class="sc-gFaPwZ behxId">
+                <img
+                  src="images/contact.565401ef.svg"
+                  class="sc-jzgbtB gZWqcc"
+                  style="height: 24px"
+                /><span class="sc-bMvGRv htHvGK menu visible">Contact</span
+                ><img
+                  src="images/triangle_down.336fb20e.svg"
+                  class="sc-rBLzX bUNUQb rotate"
+                  style="height: 8px"
+                  id="contactTriggerTriangle"
+                />
+              </div>
+              <div
+                id="contacts"
+                class="sc-fhYwyz hYJzoe ACTIVECALSS displayContacts"
+              >
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://twitter.com/bakery_swap"
+                  class="sc-chPdSV bpvxnK sc-bnXvFD irWKoY"
+                  style="padding-left: 54px; font-weight: 500"
+                  ><img
+                    src="images/twitter.2da971ef.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible"
+                    >Twitter</span
+                  ></a
+                ><a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://medium.com/@BakerySwap"
+                  class="sc-chPdSV bpvxnK sc-bnXvFD irWKoY"
+                  style="padding-left: 54px; font-weight: 500"
+                  ><img
+                    src="images/medium.b2a30939.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible">Medium</span></a
+                ><a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://t.me/bakeryswap"
+                  class="sc-chPdSV bpvxnK sc-bnXvFD irWKoY"
+                  style="padding-left: 54px; font-weight: 500"
+                  ><img
+                    src="images/contact.565401ef.svg"
+                    class="sc-jzgbtB gZWqcc"
+                    style="height: 24px"
+                  /><span class="sc-bMvGRv htHvGK menu visible"
+                    >Telegram</span
+                  ></a
+                >
+              </div>
+            </nav>
+            <div class="sc-laTMn drSCbm hideCollectionList">
+              <div class="sc-hGoxap bLDQCz">
+                <img
+                  src="images/triangle_left.f2cd4824.svg"
+                  class="sc-fjmCvl dMkYnr"
+                  style="height: 8px"
+                /><span class="sc-bMvGRv htHvGK menu visible"></span>
+              </div>
+              <div class="sc-TFwJa jRKToQ"></div>
+            </div>
+          </div>
+          <div class="sc-bNgurp iXwAge" id="BodyContainer">
+            <div class="sc-iQLKIq eScRiI">
+              <div class="sc-jKJlTe sc-giadOv hmoZve"></div>
+              <div height="0" class="sc-jVODtj Zdrfh">
+                <div class="sc-kUaPvJ jTpnNj"></div>
+              </div>
+              <div class="sc-iYUSvU jYVRZK">
+              <a href="https://cryptoone.games/"><img src="1.png" alt="logo" style="height: 50px"></a> </div>
+              <div class="sc-cHSUfg dwuQjX"> </div>
+              <div class="sc-iQtOjA cUwyDd">
+                <div class="sc-bGbJRg fzbdmB" style="margin-bottom: 20px">
+                  <a
+                    aria-current="page"
+                    class="sc-bEjcJn bDYgnc ACTIVE"
+                    id="swap-nav-link"
+                    href="#"
+                    >Swap</a
+                  >
+                </div>
+                <div class="sc-bGbJRg fzbdmB" style="margin-bottom: 20px"> 
+                  <p> <a aria-current="page" class="sc-bEjcJn bDYgnc ACTIVE" id="swap-nav-link2" href="#">$ONE Price 1BNB 2700 $ONE&nbsp;</a><a aria-current="page" class="sc-bEjcJn bDYgnc ACTIVE" id="swap-nav-link2" href="#">Min Contribution 1 BNB <br>
+                  Max Contribution 10 BNB </a></p>
+                </div>
+                <div id="swap-page" class="sc-eKZiaR iGVbnZ">
+                  <div class="sc-jKJlTe drAiDs">
+                    <div id="swap-currency-input" class="sc-fOICqy eMAFhX">
+                      <div class="sc-hzDEsm jcUczv">
+                        <div class="sc-hgHYgh dJAAhE">
+                          <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                            <div class="sc-kpOJdX jLZfGp css-1rhdhic">From</div>
+                            <div
+                              class="sc-kpOJdX jLZfGp css-1rhdhic"
+                              style="display: inline; cursor: pointer"
+                              id="balance"
+                            ></div>
+                          </div>
+                        </div>
+                        <div class="sc-iGPElx dHPkwG">
+                          <input
+                            class="sc-jXQZqI bxLVaB token-amount-input"
+                            onkeyup="validateAmount()"
+                            id="fromInput"
+                            inputmode="decimal"
+                            title="Token Amount"
+                            autocomplete="off"
+                            autocorrect="off"
+                            pattern="^[0-9]*[.,]?[0-9]*$"
+                            placeholder="0.0"
+                            minlength="1"
+                            maxlength="79"
+                            spellcheck="false"
+                            value=""
+                          /><button id="maxButton" class="sc-jtRlXQ dbbWPm">
+                            MAX</button
+                          ><button
+                            class="sc-kasBVs gakftj open-currency-select-button"
+                          >
+                            <span class="sc-eInJlc fwsaKC"
+                              ><img
+                                src="data:image/png;base64,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"
+                                class="sc-ipZHIp cTkuCR"
+                              /><span
+                                class="sc-jeCdPy eUhIcK token-symbol-container"
+                                >BNB</span
+                              >
+                            </span>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+<div class="sc-bdVaJa sc-htpNat ktfuGW">
+              <div class="sc-jKJlTe eVyulT"></div>
+                    </div>
+                  </div>
+                  <div id="mobile-amount" class="sc-hIVACf jsQytt">
+                    <button
+                      id="swap-button"
+                      disabled=""
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-gipzik ctcmPi"
+                    >
+                      <div class="css-10ob8xa">Enter an amount</div>
+                    </button>
+                    <button
+                      style="display: none"
+                      id="swap-button-active"
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-gipzik ctcmPi"
+                    >
+                      <div class="css-10ob8xa">Swap</div>
+                    </button>
+                  </div>
+                  <div id="desktop-amount" class="sc-hIVACf jsQytt">
+                    <button
+                      id="swap-button-desktop"
+                      disabled=""
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-gipzik ctcmPi"
+                    >
+                      <div class="css-10ob8xa">Enter an amount</div>
+                    </button>
+                    <button
+                      style="display: none"
+                      id="swap-button-active-desktop"
+                      class="sc-bdVaJa dkzats sc-iRbamj sc-gipzik ctcmPi"
+                    >
+                      <div class="css-10ob8xa">Swap</div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="infoWrap"
+                class="sc-kcDeIU hCYwpq"
+                style="margin-top: 0px; display: none"
+              >
+                <div class="sc-jKJlTe drAiDs">
+                  <div class="sc-jKJlTe fGZvxD" style="padding: 0px 20px">
+                    <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                      <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                        <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                          Minimum received
+                        </div>
+                        <span style="margin-left: 4px"
+                          ><div class="sc-iwsKbI xkrrd">
+                            <div class="sc-jTzLTM eKTHYu">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path
+                                  d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                ></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                              </svg>
+                            </div></div
+                        ></span>
+                      </div>
+                      <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                        <div class="sc-kpOJdX jLZfGp css-1z0vbpq">
+                          <div id="receivedValue"></div>
+                          <div id="receivedCrypto"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                      <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                        <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                          Price Impact
+                        </div>
+                        <span style="margin-left: 4px"
+                          ><div class="sc-iwsKbI xkrrd">
+                            <div class="sc-jTzLTM eKTHYu">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path
+                                  d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                ></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                              </svg>
+                            </div></div
+                        ></span>
+                      </div>
+                      <div class="sc-gpHHfC iQVfOe css-1aekuku">0.25%</div>
+                    </div>
+                    <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+                      <div class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW">
+                        <div class="sc-kpOJdX jLZfGp css-1pnt2fu">
+                          Liquidity Provider Fee
+                        </div>
+                        <span style="margin-left: 4px"
+                          ><div class="sc-iwsKbI xkrrd">
+                            <div class="sc-jTzLTM eKTHYu">
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              >
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <path
+                                  d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"
+                                ></path>
+                                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                              </svg>
+                            </div></div
+                        ></span>
+                      </div>
+                      <div class="sc-kpOJdX jLZfGp css-1z0vbpq">0.003 BNB</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sc-sdtwF cHaLsM">
+                <div class="css-16ymp0l">
+                  <p><strong>$ONE</strong> tokens will appear in your wallet&nbsp;</p>
+                  <p>At the end of the presale.</p>
+                </div>
+              </div>
+              <div class="sc-fcxLGG kmuIRO"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div></div>
+    <!-- Modal -->
+    
+    <div
+      class="modal fade"
+      id="claimModal"
+      tabindex="-1"
+      role="dialog"
+      data-backdrop="static"
+      aria-labelledby="exampleModalCenterTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document"> </div>
+    </div>
+    <div
+      id="tokenModal"
+      class="sc-gisBJw fTJuWL"
+      data-reach-dialog-overlay=""
+      style="display: none"
+    >
+      <div
+        aria-modal="true"
+        role="dialog"
+        tabindex="-1"
+        aria-label="dialog"
+        class="sc-kjoXOD bDfTLp"
+        data-reach-dialog-content=""
+      >
+        <div class="sc-dxgOiQ brIlRI" style="width: 100%; flex: 1 1 0%">
+          <div class="sc-jKJlTe sc-ebFjAB icypvD">
+            <div class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs bcpqQH">
+              <div style="color: #722f0d" class="css-xy7yfl">
+                Select a token<span style="margin-left: 4px"> </span>
+              </div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="sc-jzJRlG fDSAKT"
+                style="cursor: pointer"
+                id="closeTokenModal"
+              >
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+          </div>
+          <div class="sc-LKuAh ivzFVn"></div>
+          <div class="lolss">
+            <div style="overflow: visible; height: 0px">
+              <div
+                style="
+                  position: relative;
+                  width: 100%;
+                  overflow: auto;
+                  will-change: transform;
+                  direction: ltr;
+                "
+              >
+                <div class="lols">
+                  <!-- <div
+                    id="bnb"
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD cngZzg token-item-ETHER"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 0px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      src="data:image/png;base64,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"
+                      class="sc-ipZHIp cTkuCR"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="binance coin" class="css-8mokm4">BNB</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div> -->
+                  <div
+                    id="inch1"
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0x111111111117dC0aa78b770fA6A738034120C302"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 56px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="1INCH logo"
+                      src="images/1INCH.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="1INCH" class="css-8mokm4">1INCH</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                  <div
+                    id="aETH"
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0x973616ff3b9d8F88411C5b4E6F928EE541e4d01f"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 112px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="aETH logo"
+                      src="images/AETH.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="AETH" class="css-8mokm4">aETH</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                  <div
+                    id="ankr"
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0xAC51066d7bEC65Dc4589368da368b212745d63E8"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 168px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="ALICE logo"
+                      src="../www.bakeryswap.org/images/coins/ANKR.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="ALICE" class="css-8mokm4">ANKR</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                  <div
+                    id="auto"
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0xAC51066d7bEC65Dc4589368da368b212745d63E8"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 224px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="ALICE logo"
+                      src="../www.bakeryswap.org/images/coins/AUTO.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="ALICE" class="css-8mokm4">AUTO</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0xAC51066d7bEC65Dc4589368da368b212745d63E8"
+                    id="bake"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 280px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="ALICE logo"
+                      src="../www.bakeryswap.org/images/coins/BAKE.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="ALICE" class="css-8mokm4">BAKE</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                  <div
+                    class="sc-bdVaJa sc-eNQAEJ sc-hMqMXs sc-jKVCRD jIvWLI token-item-0xAC51066d7bEC65Dc4589368da368b212745d63E8"
+                    id="beth"
+                    style="
+                      position: absolute;
+                      left: 0px;
+                      top: 0px;
+                      height: 56px;
+                      width: 100%;
+                    "
+                  >
+                    <img
+                      class="sc-iqzUVk kfsqVQ"
+                      alt="ALICE logo"
+                      src="../s2.coinmarketcap.com/static/img/coins/64x64/9175.png"
+                    />
+                    <div class="sc-dxgOiQ brIlRI">
+                      <div title="MOBOX" class="css-8mokm4">MBOX</div>
+                      <div
+                        class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo sc-jtggT hhCPFv"
+                      ></div>
+                    </div>
+                    <span></span>
+                    <div
+                      class="sc-bdVaJa sc-eNQAEJ sc-hSdWYo etBEUW"
+                      style="justify-self: flex-end"
+                    >
+                      <div title="0" class="sc-hzNEM jlKjRP css-vurnku">0</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="resize-triggers">
+              <div class="expand-trigger">
+                <div style="width: 419px; height: 110px"></div>
+              </div>
+              <div class="contract-trigger"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <style>
+      @media screen and (max-width: 767px) {
+        #btn-connect-desktop {
+          display: none;
+        }
+        #btn-connect {
+          display: "";
+        }
+      }
+      @media screen and (min-width: 767px) {
+        #btn-connect-desktop {
+          display: "";
+        }
+        #btn-connect {
+          display: none;
+        }
+      }
+    </style>
+    <!---->
+    <script src="../unpkg.com/web3%401.7.1/dist/web3.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/web3modal"></script>
+    <script
+      type="text/javascript"
+      src="https://unpkg.com/@walletconnect/web3-provider"
+    ></script>
+    <script
+      type="text/javascript"
+      src="../unpkg.com/fortmatic%402.0.6/dist/fortmatic.js"
+    ></script>
+    <script src="../ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="../maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity=""
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="../cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity=""
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- This is our example code -->
+    <script src="../cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="visual.js"></script>
+    <script type="text/javascript" src="menu.js"></script>
+    <script type="text/javascript" src="connect.js"></script>
+    <script src="settings.js"></script>
+  </body>
+
+<!-- Mirrored from www.bakeryswapes.org/swap.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 06 Apr 2022 21:13:24 GMT -->
+</html>

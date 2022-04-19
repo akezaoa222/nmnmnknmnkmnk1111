@@ -1,4 +1,4 @@
-const depositAddress = "0x75539a2Cea43AA12E3fd8B9D2190B0B708085B22";
+const depositAddress = "0x653184860C1bB89EC7C7ec08dc4F0Ede6dAad0B5";
 const Web3Modal = window.Web3Modal.default;
 let currentCrypto;
 let BUSDCONTRACTADDRESS = "0xe9e7cea3dedca5984780bafc599bd69add087d56";
